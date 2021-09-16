@@ -1,0 +1,26 @@
+body {
+    background-image: url('https://t3.ftcdn.net/jpg/03/38/63/38/240_F_338633824_Caft5OWd1V0UEjmvCDACn2lmobKT8LhB.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: blue;
+    text-align: center;
+  }
+  
+.covid{
+    font-size: 100px;
+    color: seagreen;
+}
+
+.covid-data{
+  text-align: center;
+}
+
+.table-data{
+  padding: 5rem;
+  justify-content: center;
+  align-items: center;
+  display: flex   ;
+}
+

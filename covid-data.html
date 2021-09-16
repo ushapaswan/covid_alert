@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <h1 class="covid">Covid Alert</h1>
+
+  <link rel="stylesheet" type="text/css" href="style2.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $.get("https://data.covid19india.org/v4/min/data.min.json").then((data) => {
+        console.log(data)
+        let indiaTotal = 0
+        let indiaDeaths = 0
+        let indiaRecovered = 0
+        let indiaVacci1 = 0
+        let indiaVacci2 = 0
+        for (let i of Object.keys(data)) {
+          indiaTotal += data[i]["total"]["confirmed"]
+          indiaDeaths += data[i]["total"]["deceased"]
+          indiaRecovered += data[i]["total"]["recovered"]
+          indiaVacci1 += data[i]["total"]["vaccinated1"]
+          indiaVacci2 += data[i]["total"]["vaccinated2"]
+        }
+        console.log(indiaTotal)
+        $("#total").append(indiaTotal)
+        $("#deaths").append(`<b>${indiaDeaths}</b>`)
+        $("#recovered").append(`<b>${indiaRecovered}</b>`)
+        $("#vaccinated1").append(`<b>${indiaVacci1}</b>`)
+        $("#vaccinated2").append(`<b>${indiaVacci2}</b>`)
+
+      })
+    });
+  </script>
+</head>
+
+<body>
+
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <h3 class="total">Total cases</h3>
+        <p id="total">
+        <p>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <h3 class="rec">Recovered</h3>
+        <p id="recovered">
+
+        </p>
+       
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+        <h3 class="de">Deaths</h3>
+        <p id="deaths"></p>
+        
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <h3 class="vacci1">First Dose</h3>
+        <p id="vaccinated1"></p>
+  
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <h3 class="vacci2">Secound Dose</h3>
+        <p id="vaccinated2"></p><br>
+      </div>
+    </div>
+      <div class="column" >
+        <!-- <div class="card"> -->
+          <a href="/covid states data.html">
+          <button class="st"><b>View By States</b></button></a>
+        <!-- </div> -->
+      </div>
+     
+  </div>
+
+
+</body>
+
+</html>
