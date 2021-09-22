@@ -19,7 +19,9 @@
 <body>
   <div class="covid-data">
     <h1 class="covid">Covid Data</h1><br>
-    <input type="text" placeholder="Search.." name="search2"><br><br>
+    <h2><input type="text" name="" id="myInput" placeholder="states.." onkeyup="
+    searchFun()">
+    </h2>
   </div>
 
   <div class="table-data">
@@ -35,6 +37,29 @@
         </tr>
 
       </table>
+   <script>
+
+        const searchFun = ()=>{
+          let filter = document.getElementById('myInput').value.toUpperCase();
+          let myTable = document.getElementById('records_table');
+          let tr = myTable.getElementsByTagName('tr');
+          for (var i=0; i<tr.length; i++){
+            let td= tr[i].getElementsByTagName('td')[0];
+
+            if (td){
+              let textvalue =td.textContent || td.innerHTML;
+
+              if(textvalue.toUpperCase().indexOf(filter) > -1){
+                tr [i].style.display="";
+
+              }else{
+                tr[i].style.display = "none";
+              }
+            }
+
+          }
+        }
+      </script>
     </div>
   <script src="data-table.js"></script>
 </body>
