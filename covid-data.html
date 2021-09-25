@@ -1,11 +1,98 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
 
-  <h1 class="covid">Covid Alert</h1>
+img{
+  align-items: center;
+  margin-top:2%;
+  margin-bottom:auto;
+  margin-left: 12%;
+  margin-right: auto;
+}
+h1{
+    margin-top: 1%;
+    margin-left: 600px;
 
-  <link rel="stylesheet" type="text/css" href="covid-data.css" />
+    font-size: 65px;
+    /* background-color: darksalmon; */
+}
+h3{
+    font-size: 30px}
+
+p{
+    font-size: 40px;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 20%;
+  height: 10%;
+  padding: 0 10px;
+  /* background-color: black; */
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+.data{
+  background-color: darkturquoise;
+  display: flex;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+button{
+  height: 40px;
+  width:305%;
+  margin-left: 10%;
+  margin-top: 30%;
+  background-color:rgb(211, 160, 221);
+  text-size-adjust: 100;
+  text-decoration-color: sienna;
+}
+.bt{
+  height: 40px;
+  width:300%;
+  margin-left: 370%;
+  margin-top: 30%;
+  background-color:plum;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 70%;
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 7%;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+  padding: 10px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<body>
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -24,71 +111,61 @@
           indiaRecovered += data[i]["total"]["recovered"]
           indiaVacci1 += data[i]["total"]["vaccinated1"]
           indiaVacci2 += data[i]["total"]["vaccinated2"]
+          
         }
         console.log(indiaTotal)
-        $("#total").append(indiaTotal)
-        $("#deaths").append(`<b>${indiaDeaths}</b>`)
-        $("#recovered").append(`<b>${indiaRecovered}</b>`)
-        $("#vaccinated1").append(`<b>${indiaVacci1}</b>`)
-        $("#vaccinated2").append(`<b>${indiaVacci2}</b>`)
-
+        $("#total").append(`${indiaTotal}`)
+        $("#deaths").append(`${indiaDeaths}`)
+        $("#recovered").append(`${indiaRecovered}`)
+        $("#vaccinated1").append(`${indiaVacci1}`)
+        $("#vaccinated2").append(`${indiaVacci2}`)
       })
     });
   </script>
-</head>
+  <div class="data">
+<form action="http://127.0.0.1:5500/covid%20states%20data.html"><button>View by States</button></form><h1>Covid Data</h1><form action="http://127.0.0.1:5500/covid_district_data.html"><button class="bt">view by Districts</button></form></div>
 
-<body>
-
-  <div class="row">
-    <div class="column">
-      <div class="card">
-        <h3 class="total">Total cases</h3>
-        <p id="total">
-        <p>
-      </div>
+<div class="row">
+  <div class="column">
+    <div class="card">
+    <h3 class="total">Total cases</h3>
+    <p id="total"> <p>
+      <!-- <p>Some text</p> -->
     </div>
-
-    <div class="column">
-      <div class="card">
-        <h3 class="rec">Recovered</h3>
-        <p id="recovered">
-
-        </p>
-       
-      </div>
-    </div>
-    <div class="column">
-      <div class="card">
-        <h3 class="de">Deaths</h3>
-        <p id="deaths"></p>
-        
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <h3 class="vacci1">First Dose</h3>
-        <p id="vaccinated1"></p>
-  
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <h3 class="vacci2">Secound Dose</h3>
-        <p id="vaccinated2"></p><br>
-      </div>
-    </div>
-      <div class="column" >
-        <!-- <div class="card"> -->
-          <a href="/covid states data.html">
-          <button class="st"><b>View By States</b></button></a>
-        <!-- </div> -->
-      </div>
-     
   </div>
 
-
+  <div class="column">
+    <div class="card">
+    <h3 class="deaths">Diseased</h3>
+    <p id="deaths"></p>
+      <!-- <p>Some text</p> -->
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h3 class="recovered">Recovered</h3>
+      <p id="recovered">
+      <!-- <p>Some text</p> -->
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+    <h3 class="vaccinated1">First Dose</h3>
+    <p id="vaccinated1"></p>
+      <!-- <p>Some text</p> -->
+    </div>
+  </div>
+  <div class="column">
+        <div class="card">
+        <h3 class="vaccinated1">Secound Dose</h3>
+        <p id="vaccinated2"></p>
+        <!-- <p>Some text</p> -->
+        </div>
+    </div>
+</div>
 </body>
+<img src="https://media.springernature.com/lw725/springer-cms/rest/v1/content/18512388/data/v2" alt="Girl in a jacket" style="width:1400px;height:600px;">
 
 </html>
