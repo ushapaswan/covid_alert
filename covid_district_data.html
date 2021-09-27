@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>COVID RELETED DATA</title>
   <link rel="stylesheet" href="covid_district_data.css">
@@ -17,9 +16,9 @@
 </head>
 
 <body>
-  <div class="District-data">
-    <h1 class="covid">Covid Data</h1><br>
-     <h2><input type="text" name="" id="myInput" placeholder="Districts.." onkeyup="
+  <div class="covid-data">
+    <h1 class="covid">DISTRICT DATA</h1><br>
+    <h2><input type="text" name="" id="myInput" placeholder="Districts.." onkeyup="
       searchFun()">
       </h2>
   </div>
@@ -31,19 +30,20 @@
           <td><b>DISTRICT</b></td>
           <td><b>CONFIRMED</b></td>
           <td><b>DEATHS</b></td>
-          <td><b>FIRST DOSE</b></setd>
+          <td><b>Recovered</b></td>
+          <td><b>FIRST DOSE</b></td>
           <td><b>SECOND DOSE</b></td>
 
         </tr>
 
       </table>
-     <script>
+      <script>
 
 const searchFun = ()=>{
           let filter = document.getElementById('myInput').value.toUpperCase();
           let myTable = document.getElementById('records_table');
           let tr = myTable.getElementsByTagName('tr');
-          for (var i=0; i<tr.length; i++){
+          for (var i=1; i<tr.length; i++){
             let td= tr[i].getElementsByTagName('td')[0];
 
             if (td){
@@ -62,7 +62,7 @@ const searchFun = ()=>{
 
       </script>
     </div>
-  <script src="covid_district.js"></script>
+  <script src="new.js"></script>
 </body>
 
 </html>
