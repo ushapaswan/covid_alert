@@ -10,7 +10,7 @@ body {
   
 .covid{
     font-size: 100px;
-    color: seagreen;
+    color:darkgreen;
 }
 
 .covid-data{
@@ -23,4 +23,5 @@ body {
   align-items: center;
   /* display: flex   ; */
 }
+
 
