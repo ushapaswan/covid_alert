@@ -29,11 +29,11 @@ $(document).ready(function () {
                         trHtml +=   b["total"]["deceased"] + "</td><td>" 
                     }
 
-                    if (b["total"]["recoverd"]===undefined){
+                    if (b["total"]["recovered"]===undefined){
                         trHtml += "Not available" + "</td><td>" 
                     }
                     else{
-                        trHtml += b["total"]["recoverd"] + "</td><td>" 
+                        trHtml += b["total"]["recovered"] + "</td><td>" 
                     }
                     
                     if (b["total"]["vaccinated1"]===undefined){
