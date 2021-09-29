@@ -18,26 +18,26 @@
 
 <body>
   <div class="covid-data">
-    <h1 class="covid">States Data</h1><br>
+    <h1 class="covid">State Data</h1><br>
     <h2><input type="text" name="" id="myInput" placeholder="states.." onkeyup="
     searchFun()">
     </h2>
-  </div>
-
   <div class="table-data">
+    
       <table id="records_table" class="table table-striped">
 
         <tr>
           <td><b>STATES</b></td>
           <td><b>CONFIRMED</b></td>
           <td><b>DEATHS</b></td>
+          <td><b>RECOVERED</b></td>
           <td><b>FIRST DOSE</b></setd>
           <td><b>SECOND DOSE</b></td>
 
         </tr>
 
       </table>
-   <script>
+      <script>
 
         const searchFun = ()=>{
           let filter = document.getElementById('myInput').value.toUpperCase();
@@ -65,3 +65,6 @@
 </body>
 
 </html>
+
+
+
